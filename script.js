@@ -1,13 +1,13 @@
 (function() {
     'use strict';
 
-    const button = document.querySelector('button');
+    const button = document.querySelector('#mode');
     const body = document.querySelector('body');
     const banner = document.querySelector('#banner');
     const sections = document.querySelectorAll('section')
     let mode = 'dark';
 
-    button.addEventListener('click', function() {
+    button.addEventListener('change', function() {
         if (mode === 'dark') {
             body.className = 'switch';
             banner.className = 'switch';
@@ -23,7 +23,7 @@
             for (const section of sections) {
                 section.removeAttribute('class');
             }
-            mode = 'dark'
+            mode = 'dark';
         }
     })
 })()

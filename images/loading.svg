@@ -1,0 +1,16 @@
+<svg
+width="50"
+height="50"
+viewBox="0 0 50 50"
+xmlns="http://www.w3.org/2000/svg">
+<path fill="#000" d="M 25,6 c-10,0-18,8-18,18 h4 c0-8,6-14,14-14 V6z">
+<animateTransform 
+    type="rotate"
+    from="0 25 25"
+    to="360 25 25"
+    dur="1.5s"
+    attributeType="xml"
+    attributeName="transform"
+    repeatCount="indefinite"/>
+</path>
+</svg>
