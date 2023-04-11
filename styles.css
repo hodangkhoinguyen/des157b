@@ -8,6 +8,7 @@ body {
     background-attachment: fixed; /* This helps the gradient color cover the screen entirely*/
     color: rgb(235, 235, 235);
     transition: all 2s;
+    font-family: 'VT323', monospace;
 }
 
 body.switch {
@@ -88,7 +89,6 @@ header {
 
 #no-internet {
     display: inherit;
-    font-family: 'VT323', monospace;
 }
 
 #no-internet.switch {

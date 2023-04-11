@@ -31,7 +31,7 @@
         noInternetBanner.className = 'switch';
         messengerBanner.className = 'switch';
         dot.className = 'switch';
-        activeBar.innerText = "Nguyen is OFFLINE";
+        activeBar.innerText = "Nguyen is ONLINE";
 
         for (const section of sections) {
             section.className = 'switch';
