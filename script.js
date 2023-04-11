@@ -11,6 +11,8 @@
     let messageContainer = document.getElementsByClassName("message-container")[0];
     const typedInput = document.getElementById("texting-input");
     const sendButton = document.getElementById("send-button");
+    const dot = document.getElementById("dot");
+    const activeBar = document.getElementById("active-content");
 
     button.addEventListener('change', function() {
         if (mode === 'dark') {
@@ -26,11 +28,14 @@
         body.className = 'switch';
         banner.className = 'switch';
         button.className = 'switch';
+        noInternetBanner.className = 'switch';
+        messengerBanner.className = 'switch';
+        dot.className = 'switch';
+        activeBar.innerText = "Nguyen is OFFLINE";
+
         for (const section of sections) {
             section.className = 'switch';
         }
-        noInternetBanner.style.display = "none";
-        messengerBanner.style.display = "inherit";
         updateMessage();
     }
 
@@ -40,11 +45,15 @@
         body.removeAttribute('class');
         banner.removeAttribute('class');
         button.removeAttribute('class');
+        noInternetBanner.removeAttribute('class');
+        messengerBanner.removeAttribute('class');
+
+        dot.removeAttribute('class');
+        activeBar.innerText = "Nguyen is OFFLINE";
+
         for (const section of sections) {
             section.removeAttribute('class');
         }
-        noInternetBanner.style.display = "inherit";
-        messengerBanner.style.display = "none";
     }
 
     let messageList = [{

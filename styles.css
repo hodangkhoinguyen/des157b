@@ -29,6 +29,30 @@ header {
     margin: 0 auto 2em auto;
 }
 
+#active-status {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    top: 1rem;
+    left: 1rem;
+}
+
+#dot {
+    height: 1rem;
+    width: 1rem;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    border: solid black;
+    margin-right: 0.5rem;
+}
+
+#dot.switch {
+    background-color: green;
+}
+
 #banner {
     position: relative;
     display: flex;
@@ -63,14 +87,22 @@ header {
 }
 
 #no-internet {
+    display: inherit;
     font-family: 'VT323', monospace;
 }
 
+#no-internet.switch {
+    display: none;
+}
 /* Messenger banner */
 #messenger {
     display: none;
     height: 100%;
     width: 50%;
+}
+
+#messenger.switch {
+    display: inherit;
 }
 
 .message-container {
