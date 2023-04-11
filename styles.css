@@ -3,13 +3,15 @@
 }
 
 body {
-    background-color: #333;
+    max-height: 100%;
+    background-image: linear-gradient(180deg, #c94b4b, #4b134f);
+    background-attachment: fixed; /* This helps the gradient color cover the screen entirely*/
     color: rgb(235, 235, 235);
     transition: all 2s;
 }
 
 body.switch {
-    background-color: rgb(235, 235, 235);
+    background-image: linear-gradient(to bottom right, #00b09b, #96c93d);
     color: #333;
 }
 
@@ -33,19 +35,86 @@ header {
     width: 1100px;
     height: 250px;
     margin: auto;
-    background-color: rgb(235, 235, 235);
-    color: #333;
+    background-color: grey;
+    color: rgb(235, 235, 235);
     overflow: hidden;
     display: grid;
 	place-items: center;
-    border-radius: 20px;
+    border: solid 1rem #333;
+    border-radius: 1rem;
+    /* overflow-y: scroll; */
 }
 
 #banner.switch {
-    background-color: #333;
-    color: rgb(235, 235, 235);
+    background-color: rgb(235, 235, 235);
+    color: #333;
     transition: all 2s;
 }
+
+#dino {
+    width: 70px;
+    height: 70px;
+}
+
+#banner:hover #dino {
+    transform: translateY(-1.5em);
+    transition-duration: 0.5s;
+}
+
+#banner:not(:hover) #dino {
+    transition-duration: 0.5s;
+}
+
+#no-internet {
+    font-family: 'VT323', monospace;
+}
+
+/* Messenger banner */
+#messenger {
+    height: 100%;
+    width: 50%;
+}
+
+.message-container {
+    position: relative;
+    height: 175px;
+}
+
+.message {
+    background-color: #00b09b;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: fit-content;
+    margin: 0.5rem;
+    transition: all 2s;
+}
+
+#typing-status {
+    color: grey;
+    visibility: hidden;
+    position: absolute;
+    font-size: 1em;
+    font-style: italic;
+    bottom: 0;
+    right: 0;
+}
+
+.typing-bar {
+    height: 100%;
+}
+
+.typing-bar input {
+    width: 90%;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    border: solid black;
+}  
 
 main {
     display: flex;
@@ -62,6 +131,20 @@ main section {
 
 a {
     text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.other-list {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin: 0;
+}
+
+.other-list li {
+    padding-left: 20px;
 }
 
 ol,

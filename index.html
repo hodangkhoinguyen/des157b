@@ -27,7 +27,40 @@
 
             <!--this is for the interactive banner-->
             <div id="banner">
-                <h3>This is my banner!</h3>
+                <!-- <span class="dot" style="background-color: #FF2400"></span>
+                This person is ONLINE
+                <span class="dot" style="background-color: green"></span>
+                This person is OFFLINE -->
+                <div id="no-internet">
+                    <img id="dino" src="./images/dino.png"/>
+                    <p>
+                        <strong>No internet</strong>
+                        <br>
+                        Try:
+                        <ul class="other-list">
+                            <li>Turning off airplane mode</li>
+                            <li>Turning on mobile data or Wifi</li>
+                            <li>Checking the signal in your area</li>
+                        </ul>
+                    </p>
+                </div>
+                <div id="messenger">
+                    <div class="message-container">
+                        <div class="message">
+                            Hi there! Welcome to My Little Corner!
+                        </div>
+                        <div class="message">
+                            Let me know if you have any query!
+                        </div>
+                        <span id="typing-status">
+                            User is typing...
+                        </span>
+                    </div>
+                    <div class="typing-bar">
+                        <input id="texting-input" type="text" placeholder="Text me">
+                        <button>Like</button>
+                    </div>
+                </div>
             </div>
 
         </header>
@@ -56,7 +89,9 @@
             </section>
 
             <section id="research">
-                <h3>research</h3>
+                <div class="title">
+                    <h3>research</h3>
+                </div>
                 <nav>
                     <ul>
                         <li><a href="#">selfie seal</a>
@@ -103,7 +138,7 @@
                 </nav>
             </section>
 
-            <div id="mode-container">Internet
+            <div id="mode-container">Active Status
                 <label class="toggle">
                     <input id="mode" type="checkbox">
                     <span class="slider round"></span>
