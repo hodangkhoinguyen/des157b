@@ -3,13 +3,15 @@
 }
 
 body {
-    background-color: #333;
+    max-height: 100%;
+    background-image: linear-gradient(180deg, #c94b4b, #4b134f);
+    background-attachment: fixed; /* This helps the gradient color cover the screen entirely*/
     color: rgb(235, 235, 235);
     transition: all 2s;
 }
 
 body.switch {
-    background-color: rgb(235, 235, 235);
+    background-image: linear-gradient(to bottom right, #00b09b, #96c93d);
     color: #333;
 }
 
@@ -33,18 +35,78 @@ header {
     width: 1100px;
     height: 250px;
     margin: auto;
-    background-color: rgb(235, 235, 235);
-    color: #333;
+    background-color: grey;
     overflow: hidden;
     display: grid;
 	place-items: center;
-    border-radius: 20px;
+    border: solid 1rem #333;
+    border-radius: 1rem;
+    /* overflow-y: scroll; */
 }
 
 #banner.switch {
-    background-color: #333;
-    color: rgb(235, 235, 235);
-    transition: all 2s;
+    background-color: rgb(235, 235, 235);
+}
+
+#dino {
+    width: 70px;
+    height: 70px;
+}
+
+#banner:hover #dino {
+    transform: translateY(-1.5em);
+    transition-duration: 0.5s;
+}
+
+#banner:not(:hover) #dino {
+    transition-duration: 0.5s;
+}
+
+#no-internet {
+    font-family: 'VT323', monospace;
+}
+
+/* Messenger banner */
+#messenger {
+    display: none;
+    height: 100%;
+    width: 50%;
+}
+
+.message-container {
+    position: relative;
+    height: 175px;
+    overflow-y: scroll;
+}
+
+.message {
+    color:rgb(235, 235, 235);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: fit-content;
+    margin: 0.5rem;
+}
+
+.text-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.from-me {
+    background-color: #00b09b;
+}
+
+.from-user {
+    background-color: #0078FF;
+}
+
+.typing-bar {
+    height: 100%;
+}
+
+.typing-bar input {
+    width: 90%;
 }
 
 main {
@@ -55,13 +117,28 @@ main {
 
 main section {
     width: 25%;
-    border: 1px rgb(235, 235, 235) dashed;
+    border: solid 5px;
+    border-radius: 10px;
     margin: 0 .25em;
     padding: 1em;
 }
 
 a {
     text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.other-list {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin: 0;
+}
+
+.other-list li {
+    padding-left: 20px;
 }
 
 ol,
@@ -79,12 +156,27 @@ section a {
     line-height: 1.1em;
     display: inline-block;
     padding: .5em;
-    color: orange;
+    color: rgb(235, 235, 235);
 }
 
 section a:hover {
     background-color: orange;
+    border-radius: 1rem;
     color: #333;
+}
+
+section a:hover .loading {
+    visibility: visible;
+}
+
+.loading {
+    visibility: hidden;
+    height: 0.85em;
+    margin-left: 0.5em;
+}
+
+section.switch .loading {
+    display: none;
 }
 
 section.switch a {
@@ -92,12 +184,12 @@ section.switch a {
 }
 
 section.switch a:hover {
-    background-color: #333;
+    background-color: #00b09b;
+    border-radius: 1rem;
     color: rgb(235, 235, 235);
 }
 
 #mode-container {
-    color: white;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -107,6 +199,7 @@ section.switch a:hover {
 
 /* Toggle button */
 .toggle {
+    margin-left: 0.5rem;
     position: relative;
     display: inline-block;
     width: 45px;
