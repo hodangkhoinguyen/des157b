@@ -8,8 +8,10 @@
     let mode = 'dark';
     const noInternetBanner = document.getElementById("no-internet");
     const messengerBanner = document.getElementById("messenger");
-    const typeInput = document.getElementById("texting-input");
-    console.log(typeInput);
+    let messageContainer = document.getElementsByClassName("message-container")[0];
+    const typedInput = document.getElementById("texting-input");
+    const sendButton = document.getElementById("send-button");
+
     button.addEventListener('change', function() {
         if (mode === 'dark') {
             onlineMode();
@@ -17,7 +19,6 @@
             offlineMode();
         }
     });
-    onlineMode();
 
     // Handle the online mode
     function onlineMode() {
@@ -30,6 +31,7 @@
         }
         noInternetBanner.style.display = "none";
         messengerBanner.style.display = "inherit";
+        updateMessage();
     }
 
     // Handle the offline mode
@@ -44,14 +46,55 @@
         noInternetBanner.style.display = "inherit";
         messengerBanner.style.display = "none";
     }
-    typeInput.addEventListener("input", (e) => {
-        console.log(e.target.value);
-        let content = e.target.value;
-        if (content.length > 0) {
-            document.getElementById("typing-status").style.visibility = "visible";
+
+    let messageList = [{
+        from: "me",
+        content: "Hi there! Welcome to My Little Corner!"
+    }, {
+        from: "me",
+        content: "Let me know if you have any query!"
+    }];
+
+    typedInput.addEventListener("keydown", function(event) {
+        if (event.key === 'Enter') {
+            newMessage();
         }
-        else {
-            document.getElementById("typing-status").style.visibility = "hidden";
+    });
+
+    sendButton.addEventListener("click", function() {
+        newMessage();
+    });
+
+    function newMessage() {
+        messageList.push({
+            from: "user",
+            content: typedInput.value
+        });
+        typedInput.value = "";
+        updateMessage();
+    }
+    function updateMessage() {
+        // Delete the previous message div's
+        let deleteList = [];
+        for (let child of messageContainer.children) {
+            if (child.tagName === "DIV") {
+                deleteList.push(child);
+            }
         }
-    })
+        deleteList.forEach(elem => {
+            messageContainer.removeChild(elem);
+        });
+
+        // Render the message div's
+        for (let message of messageList) {
+            const messageDiv = document.createElement("div");
+            messageDiv.className = `text-${message.from}`;
+            const messageBubble = document.createElement("div");
+            messageBubble.textContent = message.content;
+            messageBubble.classList.add("message");
+            messageBubble.classList.add(`from-${message.from}`);
+            messageDiv.appendChild(messageBubble);
+            messageContainer.appendChild(messageDiv);
+        }
+    }
 })()

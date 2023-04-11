@@ -36,7 +36,6 @@ header {
     height: 250px;
     margin: auto;
     background-color: grey;
-    color: rgb(235, 235, 235);
     overflow: hidden;
     display: grid;
 	place-items: center;
@@ -47,8 +46,6 @@ header {
 
 #banner.switch {
     background-color: rgb(235, 235, 235);
-    color: #333;
-    transition: all 2s;
 }
 
 #dino {
@@ -71,6 +68,7 @@ header {
 
 /* Messenger banner */
 #messenger {
+    display: none;
     height: 100%;
     width: 50%;
 }
@@ -78,25 +76,29 @@ header {
 .message-container {
     position: relative;
     height: 175px;
+    overflow-y: scroll;
 }
 
 .message {
-    background-color: #00b09b;
+    color:rgb(235, 235, 235);
     padding: 0.5rem;
     border-radius: 1rem;
     width: fit-content;
     margin: 0.5rem;
-    transition: all 2s;
 }
 
-#typing-status {
-    color: grey;
-    visibility: hidden;
-    position: absolute;
-    font-size: 1em;
-    font-style: italic;
-    bottom: 0;
-    right: 0;
+.text-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.from-me {
+    background-color: #00b09b;
+}
+
+.from-user {
+    background-color: #0078FF;
 }
 
 .typing-bar {
@@ -107,15 +109,6 @@ header {
     width: 90%;
 }
 
-.dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    border: solid black;
-}  
-
 main {
     display: flex;
     justify-content: space-evenly;
@@ -124,7 +117,8 @@ main {
 
 main section {
     width: 25%;
-    border: 1px rgb(235, 235, 235) dashed;
+    border: solid 5px;
+    border-radius: 10px;
     margin: 0 .25em;
     padding: 1em;
 }
@@ -162,12 +156,27 @@ section a {
     line-height: 1.1em;
     display: inline-block;
     padding: .5em;
-    color: orange;
+    color: rgb(235, 235, 235);
 }
 
 section a:hover {
     background-color: orange;
+    border-radius: 1rem;
     color: #333;
+}
+
+section a:hover .loading {
+    visibility: visible;
+}
+
+.loading {
+    visibility: hidden;
+    height: 0.85em;
+    margin-left: 0.5em;
+}
+
+section.switch .loading {
+    display: none;
 }
 
 section.switch a {
@@ -175,12 +184,12 @@ section.switch a {
 }
 
 section.switch a:hover {
-    background-color: #333;
+    background-color: #00b09b;
+    border-radius: 1rem;
     color: rgb(235, 235, 235);
 }
 
 #mode-container {
-    color: white;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -190,6 +199,7 @@ section.switch a:hover {
 
 /* Toggle button */
 .toggle {
+    margin-left: 0.5rem;
     position: relative;
     display: inline-block;
     width: 45px;
