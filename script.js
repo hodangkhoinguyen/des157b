@@ -14,6 +14,18 @@
     const dot = document.getElementById("dot");
     const activeBar = document.getElementById("active-content");
 
+    // Some common replies
+    const replySamples = [
+        "Hmmm...I didn't quite understand that... :(",
+        "Sorry... Professor told me to not show you anything",
+        "Nguyen is not here. Can you try emailing him?",
+        "I don't like to chat. Boba tea?",
+        "Finally, someone uses this chat feature ^^",
+        "I'm speechless!!",
+        "Sorry, but I'm not ChatGPT",
+        "I need to hear more to reply back"
+    ]
+
     button.addEventListener('change', function() {
         if (mode === 'dark') {
             onlineMode();
@@ -75,13 +87,40 @@
     });
 
     function newMessage() {
+        // Show the new message from user
         messageList.push({
             from: "user",
             content: typedInput.value
         });
         typedInput.value = "";
         updateMessage();
+
+        // Show the replying status
+        setTimeout(function() {
+            messageContainer.appendChild(replyingSpan());
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        }, 500);
+
+        // Generated the reply from me
+        setTimeout(function() {
+            messageContainer.removeChild(messageContainer.lastElementChild);
+            const random = Math.floor(Math.random() * replySamples.length);
+            messageList.push({
+                from: "me",
+                content: replySamples[random]
+            });
+            updateMessage();
+        }, 2500);
     }
+
+    // Return a span for replying status
+    function replyingSpan() {
+        const replySpan = document.createElement("span");
+        replySpan.textContent = "Nguyen is reply...";
+        replySpan.className = "replying";
+        return replySpan;
+    }
+
     function updateMessage() {
         // Delete the previous message div's
         let deleteList = [];
@@ -105,5 +144,7 @@
             messageDiv.appendChild(messageBubble);
             messageContainer.appendChild(messageDiv);
         }
+        // Scroll the container to the bottom
+        messageContainer.scrollTop = messageContainer.scrollHeight;
     }
 })()
