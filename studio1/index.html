@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="./styles.css" rel="stylesheet" >
+    <script src="script.js" defer></script>
+    <title>Blockbuster Video</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <a id="home" href="../../index.html">Home Page</a>
+
+        <header>
+            <h1>
+                Blockbuster Video
+            </h1>
+
+            <h2>DES 157B - Interactive Media III - SQ 2023
+            </h2>
+        </header>
+        <div class="banner">
+            <video id="lecture-video" muted autoplay controls playsinline>
+                <source src="media/queue.webm" type="video/webm">
+                <source src="media/queue.mp4" type="video/mp4">
+        
+                <p>Your browser doesn't support HTML5 video. Here is a <a href="media/beach.mp4">link to the video</a>
+                    instead.</p>
+            </video>
+            <i class="fas fa-spinner fa-pulse"></i>
+            <p id="request">Answer the review questions below or you have to rewatch the video</p>
+        </div>
+        <div class="banner" id="review-container">
+            <form class="review-question">
+                <div>
+                    <label class="question">Question 1: What order does the queue perform?</label><br>
+                    <input type="radio" id="FIFO" name="queue-order" value="FIFO">
+                    <label for="FIFO">FIFO</label><br>
+                    <input type="radio" id="LIFO" name="queue-order" value="LIFO">
+                    <label for="LIFO">LIFO</label><br>
+                    <input type="radio" id="LILO" name="queue-order" value="LILO">
+                    <label for="LILO">LILO</label><br>
+                    <input type="radio" id="FILO" name="queue-order" value="FILO">
+                    <label for="FILO">FILO</label>
+                </div>
+                <div class="status correct">You're right</div>
+                <div class="status wrong">Incorrect. <button class="review-button">Review question 1</button></div>
+                <br>
+                <div>
+                    <label class="question">Question 2: What can we use to mimic queue in JavaScript?</label><br>
+                    <input type="radio" id="dictionary" name="data-structure" value="dictionary">
+                    <label for="dictionary">dictionary</label><br>
+                    <input type="radio" id="array" name="data-structure" value="array">
+                    <label for="array">array</label><br>
+                    <input type="radio" id="set" name="data-structure" value="set">
+                    <label for="set">set</label><br>
+                    <input type="radio" id="tuple" name="data-structure" value="tuple">
+                    <label for="tuple">tuple</label>
+                </div>
+                <div class="status correct">You're right</div>
+                <div class="status wrong">Incorrect. <button class="review-button">Review question 2</button></div>
+                <br>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
