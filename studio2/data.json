@@ -1,0 +1,56 @@
+[
+    {
+        "item": "prize",
+        "year": "2009",
+        "description": "Math Competition",
+        "special": "My first prize for a Math competition although I only got a silver medal."
+    },
+    {
+        "item": "trip",
+        "year": "2010",
+        "description": "Nghe An City",
+        "special": "First time I went on a trip without my parents."
+    },
+    {
+        "item": "ER",
+        "year": "2012",
+        "description": "Hue Hospital",
+        "special": "First time I experiened lying in an ER. Funny thing is a nurse saw me and asked 'Who let this grown girl stay in here?'"
+    },
+    {
+        "item": "phone",
+        "year": "2014",
+        "description": "Nokia",
+        "special": "It's an award after I passed the exam to my highschool. The funny thing is my mom asked the seller 'What is the modernest and most espensive mobile phone... but can't access internet?"
+    },
+    {
+        "item": "abroad",
+        "year": "2017",
+        "description": "USA",
+        "special": "First time I traveled abroad for studying. I flied from Vietnam to the US all by myself."
+    },
+    {
+        "item": "laptop",
+        "year": "2017",
+        "description": "Dell XPS",
+        "special": "I eventually got my first laptop and I could use it without my parents' permission! My parents had been very strict about electrical devices."
+    },
+    {
+        "item": "job",
+        "year": "2018",
+        "description": "Tutor",
+        "special": "I got my first paycheck as a tutor at Mission College."
+    },
+    {
+        "item": "car",
+        "year": "2019",
+        "description": "Nissan Altima",
+        "special": "I had loved a car with dark color and model of Honda or Toyota. But I ended up getting a silver Nissan Altima. As time goes by, I love it more and more!"
+    },
+    {
+        "item": "independent live",
+        "year": "2021",
+        "description": "UC Davis",
+        "special": "After moving to the US, I still had to live with my aunt, so it wasn't completely independent until I transferred to UC Davis."
+    }
+]
