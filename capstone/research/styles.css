@@ -30,18 +30,32 @@ header {
     width: 100%;
     margin: auto;
     background-color: grey;
-    overflow: hidden;
 	place-items: center;
     border: solid 1rem #333;
     border-radius: 1rem;
     padding: 15px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 75%;
 }
 
 img {
+    display: inline;
     border-radius: 20px;
     border: solid #333;
-    width: 30%;
+    width: 50%;
     margin-right: 5%;
+}
+
+p {
+    display: inline;
 }
 
 a {
