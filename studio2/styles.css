@@ -83,7 +83,6 @@ header {
     display: block;
     margin: 0 auto 10px auto;
     border-radius: 50%;
-    line-height: 27px;
     background-color: white;
     text-align: center;
     font-weight: bold;
@@ -112,7 +111,7 @@ header {
 #milestones li.active::before{
     border-color: green;
     background: green;
-    color: white
+    color: white;
 }
    
 #detail {
