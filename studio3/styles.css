@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-height: 100%;
+    background-image: linear-gradient(180deg, #c94b4b, #4b134f);
+    background-attachment: fixed; /* This helps the gradient color cover the screen entirely*/
+    color: black;
+    transition: all 2s;
+    font-family: 'VT323', monospace;
+}
+
+a {
+    color: yellow;
+}
+
+#home {
+    border-radius: 10px;
+    background-color: #333;
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+header {
+    margin: 0 auto 2em auto;
+}
+
+#container {
+    position: relative;
+    max-width: 1366px;
+    /* make sure the columns don't get too small and text stays readable */
+    min-width: 900px;
+    margin: 1em auto;
+    padding-top: 2em;
+}
+
+#banner {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    border: solid 1rem #333;
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#data-container {
+    margin: 1rem 0;
+}
+
+.label-container {
+    display: flex;
+    width: 100%;
+}
+
+.label-item {
+    display: flex;
+    background-color: darkgoldenrod;
+    justify-content: center;
+    width: 50%;
+    border: solid 1px #333;
+    border-radius: 5px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+#download-chart {
+    margin: 1rem 0;
+}

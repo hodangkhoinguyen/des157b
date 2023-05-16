@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="./styles.css" rel="stylesheet" >
+    <script src="./script.js" defer></script>
+    <title>Library Liberty</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <a id="home" href="../index.html">Home Page</a>
+
+        <header>
+            <h1>Library Liberty</h1>
+            <h2>Line Chart</h2>
+        </header>
+        <div id="banner">
+            <div class="main-container">
+                <label>Enter Data to Generate Line Chart</label>
+                <label>Click 'Random Data' If You're Lazy :)</label>
+                <div id="data-container">
+                    <div class="label-container">
+                        <label class="label-item">Col 1</label>
+                        <label class="label-item">Col 2</label>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="generate-graph">Generate Graph</button>
+                    <button id="random-data">Random Data</button>
+                    <button id="clear-data">Clear Data</button>
+                </div>
+                <canvas id="myChart"></canvas>
+                <button id="download-chart">Download Chart</button>
+            </div>
+        </div>
+        
+        <footer>
+            <a href="https://www.chartjs.org/">Chartjs</a>
+            <a href="https://ekoopmans.github.io/html2pdf.js/">Html2pdf</a>
+        </footer>
+    </div>
+
+</body>
+</html>
