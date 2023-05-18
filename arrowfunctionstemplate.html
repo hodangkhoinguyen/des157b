@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+    <style>
+        html {
+            background-color: #efefef;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            line-height: 1.4em;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding HTML element from friend data</h1>
+
+    <p>
+        The function creates a HTML element for each data of friend and add the element to the current friend list HTML element.
+    </p>
+
+    <h2>Named Function</h2>
+    <code>
+        <pre>
+            function (eachFriend) {
+                const id = eachFriend.id;
+                const lname = eachFriend.get('lname');
+                const fname = eachFriend.get('fname');
+                const email = eachFriend.get('email');
+                const facebook = eachFriend.get('facebook');
+                const twitter = eachFriend.get('twitter');
+                const instagram = eachFriend.get('instagram');
+                const linkedin = eachFriend.get('linkedin');
+        
+                const theListItem = document.createElement("li");
+                theListItem.setAttribute("id", `r-${id}`);
+                theListItem.innerHTML = `
+                    &lt;div class="name"&gt;${fname} ${lname}&lt;/div&gt;
+                    &lt;div class="email"&gt;
+                        &lt;i class="fas fa-envelope-square"&gt;&lt;/i&gt;${email}
+                    &lt;div&gt;
+                    &lt;div class="social"&gt;
+                        &lt;a href="${facebook}"&gt;&lt;i class="fab fa-facebook-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${twitter}"&gt;&lt;i class="fab fa-twitter-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${instagram}"&gt;&lt;i class="fab fa-instagram-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${linkedin}"&gt;&lt;i class="fab fa-linkedin-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;div&gt;
+                    &lt;i class="fas fa-edit" id="e-${id}"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-times-circle" id="d-${id}"&gt;&lt;/i&gt;
+                `;
+                friendList.append(theListItem);
+            }
+        </pre>
+    </code>
+
+    <h2>Function Expression</h2>
+    <code>
+        <pre>
+            const createFriend = function (eachFriend) {
+                const id = eachFriend.id;
+                const lname = eachFriend.get('lname');
+                const fname = eachFriend.get('fname');
+                const email = eachFriend.get('email');
+                const facebook = eachFriend.get('facebook');
+                const twitter = eachFriend.get('twitter');
+                const instagram = eachFriend.get('instagram');
+                const linkedin = eachFriend.get('linkedin');
+        
+                const theListItem = document.createElement("li");
+                theListItem.setAttribute("id", `r-${id}`);
+                theListItem.innerHTML = `
+                    &lt;div class="name"&gt;${fname} ${lname}&lt;/div&gt;
+                    &lt;div class="email"&gt;
+                        &lt;i class="fas fa-envelope-square"&gt;&lt;/i&gt;${email}
+                    &lt;div&gt;
+                    &lt;div class="social"&gt;
+                        &lt;a href="${facebook}"&gt;&lt;i class="fab fa-facebook-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${twitter}"&gt;&lt;i class="fab fa-twitter-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${instagram}"&gt;&lt;i class="fab fa-instagram-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${linkedin}"&gt;&lt;i class="fab fa-linkedin-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;div&gt;
+                    &lt;i class="fas fa-edit" id="e-${id}"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-times-circle" id="d-${id}"&gt;&lt;/i&gt;
+                `;
+                friendList.append(theListItem);
+            }
+        </pre>
+    </code>
+
+    <h2>Arrow Function</h2>
+    <code>
+        <pre>
+            const createFriend = (eachFriend) => {
+                const id = eachFriend.id;
+                const lname = eachFriend.get('lname');
+                const fname = eachFriend.get('fname');
+                const email = eachFriend.get('email');
+                const facebook = eachFriend.get('facebook');
+                const twitter = eachFriend.get('twitter');
+                const instagram = eachFriend.get('instagram');
+                const linkedin = eachFriend.get('linkedin');
+        
+                const theListItem = document.createElement("li");
+                theListItem.setAttribute("id", `r-${id}`);
+                theListItem.innerHTML = `
+                    &lt;div class="name"&gt;${fname} ${lname}&lt;/div&gt;
+                    &lt;div class="email"&gt;
+                        &lt;i class="fas fa-envelope-square"&gt;&lt;/i&gt;${email}
+                    &lt;div&gt;
+                    &lt;div class="social"&gt;
+                        &lt;a href="${facebook}"&gt;&lt;i class="fab fa-facebook-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${twitter}"&gt;&lt;i class="fab fa-twitter-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${instagram}"&gt;&lt;i class="fab fa-instagram-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="${linkedin}"&gt;&lt;i class="fab fa-linkedin-square"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;div&gt;
+                    &lt;i class="fas fa-edit" id="e-${id}"&gt;&lt;/i&gt;
+                    &lt;i class="fas fa-times-circle" id="d-${id}"&gt;&lt;/i&gt;
+                `;
+                friendList.append(theListItem);
+            }
+        </pre>
+    </code>
+
+    <footer> Nguyen Ho </footer>
+    
+</body>
+</html>
