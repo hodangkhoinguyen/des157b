@@ -86,6 +86,7 @@ header {
     background-color: white;
     text-align: center;
     font-weight: bold;
+    transition: all 1.5s;
 }
 
 #milestones li::after{
@@ -97,6 +98,7 @@ header {
     top: 15px;
     left: -50%;
     z-index: -1;
+    transition: all 1s;
 }
 
 #milestones li:first-child::after{
@@ -105,16 +107,25 @@ header {
 
 #milestones li.active::after{
     background: green;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 #milestones li.active::before{
     border-color: green;
     background: green;
     color: white;
+    transition: all 1.5s;
 }
    
 #detail {
     width: 50%;
     height: 200px;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 10px;
+    background-color: #96c93d;
 }
