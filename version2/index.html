@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;700&family=Lato:wght@300;400;700;900&family=Life+Savers:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- icons from font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    <!-- stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="onboarding.css" rel="stylesheet">
+    <link href="begingame.css" rel="stylesheet">
+
+    <!-- javascript file -->
+    <script src="script.js" defer></script>
+    
+    <title>Seal Your Knowledge!</title>
+</head>
+
+<body>
+<!-- — — — — — — — — — — — — — landing page html BEGIN — — — — — — — — — — — — — -->
+    <section class="onboarding">
+
+        <section id="leftHalf">
+            <h1>Seal Your Knowledge</h1>
+            <img src="images/seal.png" alt="centennial seal image" width="500" height="500">
+        </section>
+
+        <section id="loginForm">
+
+            <h2>Log In</h2>
+
+            <section id="loginInput">
+                <input placeholder="Username"></input>
+                <input placeholder="Password"></input>
+                <button>Log In</button>
+            </section>
+
+            <br>
+            <br>
+            <br>
+
+            <section id="guest">
+                <p>Don't have an account yet?</p>
+                <button>Create Account</button>
+                <button id="continueGuest">Continue As Guest</button>
+            </section>
+
+        </section>
+    </section>
+<!-- — — — — — — — — — — — — — landing page html END — — — — — — — — — — — — — -->
+
+<!-- — — — — — — — — — — — — — guest user flow BEGIN — — — — — — — — — — — — — -->
+    <section class="beginGame hidden">
+        <i class="fa-solid fa-arrow-left"></i>
+        <h1>Begin Game</h1>
+        <h3>Step 1: Select Your Choice of Question Set</h3>
+
+        <section id="groupBtn">
+            <button class="whiteBtn">Putah Creek Animals and Plants</button>
+            <button class="whiteBtn">Patwin People</button>
+        </section>
+
+    </section>
+<!-- — — — — — — — — — — — — — guest user flow END — — — — — — — — — — — — — -->
+
+<!-- — — — — — — — — — — — — — select team flow BEGIN — — — — — — — — — — — — — -->
+    <section class="selectTeam hidden">
+        <i class="fa-solid fa-arrow-left"></i>
+        <h1>Begin Game</h1>
+        <p>Step 2: Select Your Teams</p>
+
+        <label>Number of teams?</label>
+        <label>Team 1</label><input placeholder="Team 1"></input>
+        <label>Team 2</label><input placeholder="Team 2"></input>
+        <label>Team 3</label><input placeholder="Team 3"></input>
+        <label>Team 4</label><input placeholder="Team 4"></input>
+        <section>
+            <button>Start Game</button>
+        </section>
+    </section>
+<!-- — — — — — — — — — — — — — select team flow END — — — — — — — — — — — — — -->
+
+</body>
+</html>
