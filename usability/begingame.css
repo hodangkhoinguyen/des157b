@@ -1,0 +1,68 @@
+.whiteBtn {
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    text-align: left;
+    max-width: 30%;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: black 5px 5px;
+    font-size: 20px;
+}
+
+.whiteBtn:hover {
+    background-color: #438EFF;
+    color: white;
+}
+
+#groupBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#groupBtn label {
+    padding: 0.2em;
+    margin: 0.5em 0;
+}
+
+#groupBtn label input {
+    border: none;
+    border-bottom: black 2px solid;
+    background-color: #B1D0FF;
+    font-size: 18px;
+}
+
+#startBtn {
+    display: flex;
+    justify-content: space-around;
+}
+
+#startBtn button {
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    max-width: 30%;
+    align-items: right;
+    background-color: rgb(255, 113, 113);
+    border: none;
+    border-radius: 15px;
+    box-shadow: black 5px 5px;
+    font-size: 20px;
+}
+
+#startBtn button:hover{
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    max-width: 30%;
+    align-items: right;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: black 5px 5px;
+    font-size: 20px;
+}
+
+#startBtn button a {
+    text-decoration: none;
+    color: black;
+}
