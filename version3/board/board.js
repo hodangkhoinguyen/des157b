@@ -62,7 +62,7 @@
         questionList = await questionJson.json();
     };
 
-    function setUp () {
+    function setUp() {
         // First row
         for (let i = 0; i < NUM_COL; i++) {
             const newCell = createCell(cellList.length + 1);
@@ -93,7 +93,7 @@
 
         function createCell(num) {
             const cell = document.createElement("section");
-            cell.className = "cell";
+            cell.className = `cell cell-${num}`;
             cell.textContent = num;
             return cell;
         }
@@ -102,10 +102,10 @@
         cellList[0].classList.add("first-cell");
 
         playerList = [
-            new Player(teamname[0], 0, mover1, 10, 10),
-            new Player(teamname[1], 0, mover2, 10, 80),
-            new Player(teamname[2], 0, mover3, 80, 10),
-            new Player(teamname[3], 0, mover4, 80, 80)
+            new Player(teamname[0], 0, mover1, 8, 8),
+            new Player(teamname[1], 0, mover2, 8, 75),
+            new Player(teamname[2], 0, mover3, 75, 8),
+            new Player(teamname[3], 0, mover4, 75, 75)
         ];
 
         playerList.forEach(p => p.move(0));
@@ -131,6 +131,7 @@
 
             questionContainer.innerHTML = "";
             questionContainer.appendChild(createQuestion(problem));
+            questionContainer.appendChild(createImageQuestion(problem));
         });
     }
 
@@ -193,7 +194,7 @@
     function displayStatus(isCorrect) {
         statusContainer.classList.remove("hidden");
         if (isCorrect) {
-            answerResult.textContent = `Correct. You are allowed to move ${stepNum} steps`;
+            answerResult.textContent = `The answer is correct! You will now move ${stepNum} steps :)`;
             if (playerList[Player.currTurn].position + stepNum >= Player.cellList.length) {
                 boardContainer.classList.add("hidden");
                 displayFinalResult(playerList[Player.currTurn]);
@@ -204,7 +205,7 @@
             }
         }
         else {
-            answerResult.textContent = `Incorrect. Your team cannot move`;
+            answerResult.textContent = `The answer is incorrect. You have a flat tire for this round :(`;
         }
         Player.nextTurn();
 
@@ -215,16 +216,27 @@
         });
     }
 
+    function createImageQuestion(problem) {
+        const questionDiv = document.createElement("section");
+        questionDiv.className = "question-image";
+        questionDiv.innerHTML = "<img src='../images/a_blueheron.png'/>";
+        return questionDiv;
+    }
     const finalResultContainer = document.getElementsByClassName("final-result")[0];
     function displayFinalResult(player) {
         finalResultContainer.classList.remove("hidden");
         const teamWinner = document.getElementsByClassName("team-winner")[0];
         teamWinner.textContent = player.name;
+
+        // returning back to home page
+        document.querySelector('#returnHome').addEventListener('click', function (event) {
+            window.location.href = '../index.html';
+        });
     }
 
     getQuestionList()
-    .then(() => {
-        setUp();
-    })
+        .then(() => {
+            setUp();
+        })
 })();
 
