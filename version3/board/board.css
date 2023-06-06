@@ -1,0 +1,161 @@
+/*  universal CSS*/
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    background-color: #B1D0FF;
+    max-height: 100vh;
+}
+
+h1, h2 {
+    font-family: 'Life Savers', cursive;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3em;
+    width: fit-content;
+    height: fit-content;
+}
+
+/* 5 rows x 8 columns */
+#board-container {
+    width: fit-content;
+}
+
+.row {
+    display: flex;
+}
+
+#lower-row {
+    flex-direction: row-reverse;
+}
+
+#left-column {
+    flex-direction: column-reverse;
+}
+
+.middle-container {
+    display: flex;
+    width: 100%;
+}
+
+.middle-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell {
+    background-color: white;
+    border: solid black 1px;
+    height: 10rem;
+    width: 10rem;
+}
+
+.play-container {
+    background-color: #F6DBC8;
+    border: solid #9A694E 1px;
+    border-radius: 0.25rem;
+    height: 90%;
+    width: 80%;
+}
+
+.dice-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice-container > section {
+    width: 40%;
+}
+
+.question-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.question-display {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.question-item {
+    margin-bottom: 1.25rem;
+}
+
+.answer-item {
+    margin-bottom: 0.75rem;
+}
+/* 
+.question-container section {
+    display: flex;
+    flex-direction: column;
+} */
+
+button {
+    background-color: #393939;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+}
+
+.turn-display {
+    font-size: 2rem;
+}
+
+.status-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-container > section {
+    width: 40%;
+}
+
+.answer-display {
+    font-size: 1.5rem;
+}
+
+.bike-img {
+    position: absolute;
+    width: 4rem;
+    transition: all .5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* CSS for first cell */
+/* .first-cell {
+
+} */

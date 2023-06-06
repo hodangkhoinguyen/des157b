@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;700&family=Lato:wght@300;400;700;900&family=Life+Savers:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- icons from font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    <!-- stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="onboarding.css" rel="stylesheet">
+    <link href="begingame.css" rel="stylesheet">
+
+    <!-- javascript file -->
+    <script src="script.js" defer></script>
+    
+    <title>Seal Your Knowledge!</title>
+</head>
+
+<body>
+<!-- — — — — — — — — — — — — — OVERLAY BEGIN — — — — — — — — — — — — — -->
+    <section id="rules" class="hidden">
+        <section id="rulesContent">
+            <h1>Here are the rules for Seal Your Knowledge!</h1>
+            <p>The first team to return to the base wins the game!</p>
+            <h4>Basic Rules of the Game</h4>
+            <ol>
+                <li>Select a topic for pre-made question set</li>
+                <li>Generate 4 team names (make sure to have all four teams generated!)</li>
+                <li>Roll the dice to generate numbers between 1-6</li>
+                <li>Solve the question displayed at the center of the game board</li>
+                <li>If you answer correctly, the movers will move as the number you rolled. However, if the question is incorrect then the movers will not move forward.</li>
+            </ol>
+
+            <h4>Safety Rules!</h4>
+            <ol>
+                <li>Raise your hand before shouting the answer!</li>
+                <li>Be understanding even if your team member gets the question wrong</li>
+                <li>This is a team play! Make sure to talk with your teammates first before answering the question</li>
+            </ol>
+            <button class="closeRule">close</button>
+        </section>
+    </section>
+
+    <section id="overlay" class="overlayStyle hidden">
+        <section id="content">
+            <h2>Instruction of the user test.</h2>
+            <p>
+                First of all, thank you for your time to participate in this user test!
+            </p>
+            <p>
+                There are 3 tasks you would need to perform during this session.
+                <ol>
+                    <li>Play the game as a guest</li>
+                    <li>Locate the rules section</li>
+                </ol>
+            </p>
+            <p>
+                Once you're done, we will ask you some questions regarding your experience with the game.
+            </p>
+            <button class="close">close</button>
+        </section>
+    </section>
+<!-- — — — — — — — — — — — — — OVERLAY END — — — — — — — — — — — — — -->
+
+<!-- — — — — — — — — — — — — — landing page html BEGIN — — — — — — — — — — — — — -->
+    <section class="home">
+
+        <section id="leftHalf">
+            <h1>Seal Your Knowledge</h1>
+            <img src="images/seal.png" alt="centennial seal image" width="500" height="500">
+            
+            <!-- user test button -->
+            <section id="userTestBtn" class="open">
+                <button>User Test Guides</button>
+            </section>
+        </section>
+
+        <section id="loginForm">
+            <section id="ruleSection">
+                <button class="ruleBtn">Rules</button>
+            </section>
+
+            <h2>Log In</h2>
+            <section id="loginInput">
+                <input placeholder="Username"></input>
+                <input placeholder="Password"></input>
+                <button id="login">Log In</button>
+            </section>
+
+            <section id="loginOverlay" class="hidden">
+                <p>Sorry, we are still working on developing login feature :(</p>
+                <button id="closeOverlay">close</button>
+            </section>
+
+            <br>
+            <br>
+            <br>
+
+            <section id="guest">
+                <p>Don't have an account yet?</p>
+                <button>Create Account</button>
+                <button id="continueGuest">Continue As Guest</button>
+            </section>
+        </section>
+    </section>
+<!-- — — — — — — — — — — — — — landing page html END — — — — — — — — — — — — — -->
+
+<!-- — — — — — — — — — — — — — select question set BEGIN — — — — — — — — — — — — — -->
+    <section class="beginGame sectionStyle hidden">
+        <i id="backHome" class="fa-solid fa-arrow-left"></i>
+        <h1>Begin Game</h1>
+        <h3>Step 1: Select a Question Set</h3>
+
+        <section id="groupBtn">
+            <button id="questionSelect" class="whiteBtn">Putah Creek Animals and Plants</button>
+            <button id="patwin" class="whiteBtn">Patwin People</button>
+        </section>
+
+    </section>
+<!-- — — — — — — — — — — — — — select question set END — — — — — — — — — — — — — -->
+
+<!-- — — — — — — — — — — — — — patwin people notification BEGIN — — — — — — — — — — — — — -->
+    <section id="patwinPage" class="sectionStyle hidden">
+        <i id="backTopic" class="fa-solid fa-arrow-left"></i>
+        <h2>OOPS it seems like there are no question sets regarding the topic: "Patwin People"</h2>
+    </section>
+<!-- — — — — — — — — — — — — — patwin people notification END — — — — — — — — — — — — — -->
+
+<!-- — — — — — — — — — — — — — select team names BEGIN — — — — — — — — — — — — — — -->
+    <section class="teamSelect sectionStyle hidden">
+        <i id="backBegin" class="fa-solid fa-arrow-left"></i>
+        <h1>Begin Game</h1>
+        <h2>You are about to play the game with the question set, <em>Putah Creek Animals and Plants!</em></h2>
+        <h3>Step 2: Select Your Team Names</h3>
+
+        <section id="groupBtn">
+            <label>Team 1: <input class="teamname" placeholder="   team 1"></label></label>
+            <label>Team 2: <input class="teamname" placeholder="   team 2"></label></label>
+            <label>Team 3: <input class="teamname" placeholder="   team 3"></label></label>
+            <label>Team 4: <input class="teamname" placeholder="   team 4"></label></label>
+        </section>
+        <section id="startBtn">
+            <button id="start-game">Start Game</button>
+        </section>
+
+    </section>
+
+<!-- — — — — — — — — — — — — — select team names END — — — — — — — — — — — — — — — — -->
+
+
+</body>
+</html>
