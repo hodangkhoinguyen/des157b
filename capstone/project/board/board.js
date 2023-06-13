@@ -38,6 +38,9 @@
     const mover3 = document.getElementsByClassName("bike-img")[2];
     const mover4 = document.getElementsByClassName("bike-img")[3];
 
+    const diceList = ["one.png", "two.png", "three.png", "four.png", "five.png", "six.png"];
+    const diceImg = document.getElementsByClassName("dice-img")[0];
+
     const teamname = JSON.parse(localStorage.getItem("teamname"));
     const NUM_ROW = 5;
     const NUM_COL = 8;
@@ -115,6 +118,7 @@
 
         rollBtn.addEventListener("click", function () {
             stepNum = Math.floor(Math.random() * 6) + 1;
+            diceImg.src = `../images/${diceList[stepNum-1]}`;
             rollResult.textContent = stepNum;
             rollResultContainer.classList.remove("hidden");
             rollContainer.classList.add("hidden");
@@ -194,9 +198,13 @@
     /**************************** CHANGE THE HEADER AND ALERT OF STATUS PLEASEEEEE */
     function displayStatus(isCorrect) {
         statusContainer.classList.remove("hidden");
+        const statusHeader = document.getElementsByClassName("status-header-text")[0];
+        const statusAlert = document.getElementsByClassName("answer-alert")[0];
         if (isCorrect) {
             statusContainer.style.backgroundColor = "rgb(60, 179, 113)";
-            answerResult.textContent = `The answer is correct! You will now move ${stepNum} steps :)`;
+            statusHeader.textContent = "Correct";
+            statusAlert.textContent = "Woohoo";
+            answerResult.textContent = `The answer is correct! You will now move ${stepNum} step(s) :)`;
             if (playerList[Player.currTurn].position + stepNum >= Player.cellList.length) {
                 boardContainer.classList.add("hidden");
                 displayFinalResult(playerList[Player.currTurn]);
@@ -207,10 +215,13 @@
             }
         }
         else {
+            statusHeader.textContent = "Incorrect";
+            statusAlert.textContent = "Flat Tire Alert";
             statusContainer.style.backgroundColor = "rgba(219, 33, 56, 0.38)";
             answerResult.textContent = `The answer is incorrect. You have a flat tire for this round :(`;
         }
         Player.nextTurn();
+        diceImg.src = "../images/dice.png";
 
         nextTeamBtn.addEventListener("click", function () {
             diceContainer.classList.remove("hidden");
@@ -225,6 +236,7 @@
         questionDiv.innerHTML = `<img src="${problem.photo}"/>`;
         return questionDiv;
     }
+
     const finalResultContainer = document.getElementsByClassName("final-result")[0];
     function displayFinalResult(player) {
         finalResultContainer.classList.remove("hidden");
